@@ -1,0 +1,38 @@
+# ---- Operating system ----
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+.DS_Store
+._*
+
+# ---- Editors and IDEs ----
+.vscode/*
+!.vscode/extensions.json
+.idea/
+*.sublime-project
+*.sublime-workspace
+*.swp
+*.swo
+
+# ---- Logs and temporary files ----
+*.log
+*.tmp
+*.temp
+*~
+
+# ---- Build and dependency folders (unused, kept for safety) ----
+node_modules/
+dist/
+build/
+.cache/
+
+# ---- Environment and secrets ----
+.env
+.env.*
+!.env.example
+
+# ---- Archives ----
+*.zip
+*.rar
+*.7z

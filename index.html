@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gomezgani Chirwa — IT Officer, GIS Specialist & Full-Stack Developer | KataTech Solutions</title>
+  <meta name="description" content="Portfolio of Gomezgani Chirwa — IT Officer, GIS Specialist, Data Analyst and Founder of KataTech Solutions, Malawi." />
+  <meta name="keywords" content="Gomezgani Chirwa, KataTech Solutions, IT Officer, GIS Malawi, Data Analyst, Web Developer, Freelance Designer Malawi" />
+  <meta name="theme-color" content="#060b18" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%232F4BD8'/%3E%3Cstop offset='1' stop-color='%2322D3EE'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='64' height='64' rx='15' fill='url(%23g)'/%3E%3Ctext x='32' y='43' font-family='Arial,sans-serif' font-size='28' font-weight='800' fill='white' text-anchor='middle'%3EGK%3C/text%3E%3C/svg%3E" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sora:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/main.css" />
+  <link rel="stylesheet" href="css/animations.css" />
+  <script>
+    // Apply saved theme before first paint to avoid a flash of the wrong theme
+    try {
+      var t = localStorage.getItem('theme') || 'dark';
+      document.documentElement.setAttribute('data-theme', t);
+    } catch (e) {}
+  </script>
+</head>
+<body>
+
+<!-- Scroll progress indicator -->
+<div class="scroll-progress" id="scroll-progress" aria-hidden="true"></div>
+
+<!-- ════════════════════════════════════════
+     ICON SPRITE — inline SVG symbols (Lucide-style)
+     Referenced with <svg class="icon"><use href="#i-…"/></svg>
+════════════════════════════════════════ -->
+<svg xmlns="http://www.w3.org/2000/svg" style="position:absolute;width:0;height:0;overflow:hidden" aria-hidden="true" focusable="false">
+  <symbol id="i-map" viewBox="0 0 24 24"><polygon points="3 6 9 3 15 6 21 3 21 18 15 21 9 18 3 21"/><line x1="9" y1="3" x2="9" y2="18"/><line x1="15" y1="6" x2="15" y2="21"/></symbol>
+  <symbol id="i-monitor" viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></symbol>
+  <symbol id="i-server" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="8" rx="2"/><rect x="2" y="14" width="20" height="8" rx="2"/><line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/></symbol>
+  <symbol id="i-code" viewBox="0 0 24 24"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></symbol>
+  <symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></symbol>
+  <symbol id="i-chart" viewBox="0 0 24 24"><path d="M3 3v18h18"/><path d="M18 17V9"/><path d="M13 17V5"/><path d="M8 17v-3"/></symbol>
+  <symbol id="i-palette" viewBox="0 0 24 24"><circle cx="13.5" cy="6.5" r=".5"/><circle cx="17.5" cy="10.5" r=".5"/><circle cx="8.5" cy="7.5" r=".5"/><circle cx="6.5" cy="12.5" r=".5"/><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.555-2.503 5.555-5.554C21.965 6.012 17.461 2 12 2Z"/></symbol>
+  <symbol id="i-languages" viewBox="0 0 24 24"><path d="m5 8 6 6"/><path d="m4 14 6-6 2-3"/><path d="M2 5h12"/><path d="M7 2h1"/><path d="m22 22-5-10-5 10"/><path d="M14 18h6"/></symbol>
+  <symbol id="i-cap" viewBox="0 0 24 24"><path d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0Z"/><path d="M22 10v6"/><path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></symbol>
+  <symbol id="i-phone" viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="2"/><path d="M12 18h.01"/></symbol>
+  <symbol id="i-mail" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></symbol>
+  <symbol id="i-github" viewBox="0 0 24 24"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.4 5.4 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></symbol>
+  <symbol id="i-zap" viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></symbol>
+  <symbol id="i-leaf" viewBox="0 0 24 24"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/></symbol>
+  <symbol id="i-lock" viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></symbol>
+  <symbol id="i-star" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></symbol>
+  <symbol id="i-external" viewBox="0 0 24 24"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></symbol>
+  <symbol id="i-send" viewBox="0 0 24 24"><path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></symbol>
+  <symbol id="i-heart" viewBox="0 0 24 24"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></symbol>
+  <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></symbol>
+  <symbol id="i-moon" viewBox="0 0 24 24"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></symbol>
+  <symbol id="i-chevron" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></symbol>
+  <symbol id="i-close" viewBox="0 0 24 24"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></symbol>
+  <symbol id="i-zoom" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/><path d="M11 8v6"/><path d="M8 11h6"/></symbol>
+  <symbol id="i-layers" viewBox="0 0 24 24"><path d="m12 2 9 5-9 5-9-5 9-5Z"/><path d="m3 12 9 5 9-5"/><path d="m3 17 9 5 9-5"/></symbol>
+  <symbol id="i-image" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-4.5-4.5L3 21"/></symbol>
+  <symbol id="i-pen" viewBox="0 0 24 24"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/><path d="M2 2l7.586 7.586"/><circle cx="11" cy="11" r="2"/></symbol>
+  <symbol id="i-video" viewBox="0 0 24 24"><path d="m22 8-6 4 6 4V8Z"/><rect x="2" y="6" width="14" height="12" rx="2"/></symbol>
+  <symbol id="i-quote" viewBox="0 0 24 24"><path d="M10 11H6a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v8a4 4 0 0 1-4 4"/><path d="M20 11h-4a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v8a4 4 0 0 1-4 4"/></symbol>
+</svg>
+
+<!-- ════════════════════════════════════════
+     NAVBAR
+════════════════════════════════════════ -->
+<nav class="navbar">
+  <div class="nav-inner">
+    <div class="nav-brand">
+      <div class="nav-logo">GK</div>
+      <div class="nav-brand-text">
+        <span>Gomezgani Chirwa</span>
+        <span>KATATECH SOLUTIONS</span>
+      </div>
+    </div>
+    <div class="nav-links" id="nav-links">
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#experience">Experience</a>
+      <a href="#services">Services</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <div class="nav-actions">
+      <button class="theme-toggle" id="theme-toggle" aria-label="Toggle color theme"></button>
+      <button class="btn-hire" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Hire Me</button>
+      <button class="nav-hamburger" id="nav-hamburger" type="button"
+              aria-label="Open navigation menu" aria-expanded="false" aria-controls="nav-links">
+        <span class="bars" aria-hidden="true"><span></span><span></span><span></span></span>
+        <svg class="icon close-glyph" aria-hidden="true"><use href="#i-close"/></svg>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- ════════════════════════════════════════
+     HERO
+════════════════════════════════════════ -->
+<section id="hero">
+  <div class="hero-bg-grid"></div>
+  <div class="hero-glow"></div>
+  <div class="hero-orb o1" aria-hidden="true"></div>
+  <div class="hero-orb o2" aria-hidden="true"></div>
+  <canvas id="hero-canvas"></canvas>
+
+  <div class="container hero-content">
+    <div class="hero-inner">
+      <div class="hero-text">
+        <div class="hero-eyebrow">
+          <span class="dot"></span>
+          Available for Work &amp; Freelance
+        </div>
+        <h1 class="hero-title">
+          <span class="line1">Gomezgani</span>
+          <span class="line2">Chirwa</span>
+        </h1>
+        <p class="hero-company">Founder · <strong>KataTech Solutions</strong> · Blantyre, Malawi</p>
+        <div class="hero-roles">
+          <span class="role-tag">IT Officer</span>
+          <span class="role-tag">GIS Specialist</span>
+          <span class="role-tag">Data Analyst</span>
+          <span class="role-tag">Web Developer</span>
+          <span class="role-tag">Graphic Designer</span>
+        </div>
+        <p class="hero-desc">
+          I'm a <strong id="typed-text"></strong><span class="typed-cursor"></span><br />
+          Building smart digital solutions across IT systems, spatial data, creative design and agricultural technology in Malawi and beyond.
+        </p>
+        <div class="hero-actions">
+          <a href="#projects" class="btn btn-primary">View My Work <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+          <a href="#contact" class="btn btn-outline">Get In Touch <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+        </div>
+        <div class="hero-stats">
+          <div class="stat-item">
+            <span class="stat-num" data-count="5" data-suffix="+">0+</span>
+            <span class="stat-label">Years Experience</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-num" data-count="6" data-suffix="+">0+</span>
+            <span class="stat-label">GitHub Repos</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-num" data-count="3" data-suffix="">0</span>
+            <span class="stat-label">Languages</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-num" data-count="100" data-suffix="%">0%</span>
+            <span class="stat-label">Committed</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-visual">
+        <div class="hero-avatar-ring">
+          <div class="avatar-outer-ring"></div>
+          <div class="avatar-inner-ring"></div>
+          <div class="avatar-circle">
+            <span class="avatar-initials">GKC</span>
+            <div class="avatar-overlay"></div>
+          </div>
+        </div>
+        <div class="floating-badge badge-1">
+          <span class="badge-dot"></span> BSc MIS Student
+        </div>
+        <div class="floating-badge badge-2">
+          <svg class="icon" aria-hidden="true"><use href="#i-map"/></svg> GIS &amp; ArcMap
+        </div>
+        <div class="floating-badge badge-3">
+          <svg class="icon" aria-hidden="true"><use href="#i-zap"/></svg> KataTech Solutions
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="scroll-cue" aria-hidden="true">
+    <span class="mouse"></span>
+    Scroll
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════
+     TECH MARQUEE STRIP
+════════════════════════════════════════ -->
+<div class="tech-strip">
+  <div class="marquee-inner">
+    <span class="marquee-item"><span class="dot"></span>Python</span>
+    <span class="marquee-item"><span class="dot"></span>ArcMap</span>
+    <span class="marquee-item"><span class="dot"></span>AutoCAD</span>
+    <span class="marquee-item"><span class="dot"></span>MySQL</span>
+    <span class="marquee-item"><span class="dot"></span>HTML / CSS</span>
+    <span class="marquee-item"><span class="dot"></span>PHP</span>
+    <span class="marquee-item"><span class="dot"></span>JavaScript</span>
+    <span class="marquee-item"><span class="dot"></span>Adobe Photoshop</span>
+    <span class="marquee-item"><span class="dot"></span>Adobe Illustrator</span>
+    <span class="marquee-item"><span class="dot"></span>Premiere Pro</span>
+    <span class="marquee-item"><span class="dot"></span>WordPress</span>
+    <span class="marquee-item"><span class="dot"></span>Advanced Excel</span>
+    <span class="marquee-item"><span class="dot"></span>GIS Mapping</span>
+    <span class="marquee-item"><span class="dot"></span>Business Intelligence</span>
+    <span class="marquee-item"><span class="dot"></span>KataTech Solutions</span>
+    <!-- duplicate for seamless loop -->
+    <span class="marquee-item"><span class="dot"></span>Python</span>
+    <span class="marquee-item"><span class="dot"></span>ArcMap</span>
+    <span class="marquee-item"><span class="dot"></span>AutoCAD</span>
+    <span class="marquee-item"><span class="dot"></span>MySQL</span>
+    <span class="marquee-item"><span class="dot"></span>HTML / CSS</span>
+    <span class="marquee-item"><span class="dot"></span>PHP</span>
+    <span class="marquee-item"><span class="dot"></span>JavaScript</span>
+    <span class="marquee-item"><span class="dot"></span>Adobe Photoshop</span>
+    <span class="marquee-item"><span class="dot"></span>Adobe Illustrator</span>
+    <span class="marquee-item"><span class="dot"></span>Premiere Pro</span>
+    <span class="marquee-item"><span class="dot"></span>WordPress</span>
+    <span class="marquee-item"><span class="dot"></span>Advanced Excel</span>
+    <span class="marquee-item"><span class="dot"></span>GIS Mapping</span>
+    <span class="marquee-item"><span class="dot"></span>Business Intelligence</span>
+    <span class="marquee-item"><span class="dot"></span>KataTech Solutions</span>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════════
+     ABOUT
+════════════════════════════════════════ -->
+<section id="about">
+  <div class="container">
+    <div class="about-inner">
+      <div class="about-visual reveal-left">
+        <div class="about-card-stack">
+          <div class="about-main-card">
+            <span class="about-initials-large">GKC</span>
+          </div>
+          <div class="about-accent-card">
+            <span class="num">5+</span>
+            <span class="lbl">Years IT Experience</span>
+          </div>
+          <div class="about-gold-card">
+            <strong><svg class="icon" aria-hidden="true"><use href="#i-leaf"/></svg> KataFarm</strong>
+            Smart Agri Platform
+          </div>
+        </div>
+      </div>
+
+      <div class="about-text reveal-right">
+        <div class="section-tag">About Me</div>
+        <h2 class="section-title">Technology meets <span>purpose</span></h2>
+        <p>
+          I am an IT Officer, educator, GIS specialist and founder based in Blantyre, Malawi. With over five years of hands-on experience across IT infrastructure, spatial data management, database administration and creative digital production I bring a rare combination of technical depth and creative versatility to every project.
+        </p>
+        <p>
+          Currently pursuing a BSc in Management Information Systems at the Malawi University of Business and Applied Sciences I am building KataTech Solutions — a technology company focused on delivering smart digital solutions for Malawian businesses, institutions and agricultural communities.
+        </p>
+        <p>
+          From building GIS land demarcation maps with ArcMap and AutoCAD to developing full-stack web applications, data dashboards and branded design systems — I work at the intersection of technology and impact.
+        </p>
+        <div class="about-highlights">
+          <div class="highlight-pill"><svg class="icon" aria-hidden="true"><use href="#i-cap"/></svg> BSc MIS Student</div>
+          <div class="highlight-pill"><svg class="icon" aria-hidden="true"><use href="#i-map"/></svg> GIS Specialist</div>
+          <div class="highlight-pill"><svg class="icon" aria-hidden="true"><use href="#i-zap"/></svg> KataTech Founder</div>
+          <div class="highlight-pill"><svg class="icon" aria-hidden="true"><use href="#i-pin"/></svg> Blantyre, Malawi</div>
+          <div class="highlight-pill"><svg class="icon" aria-hidden="true"><use href="#i-palette"/></svg> Creative Designer</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════
+     SKILLS
+════════════════════════════════════════ -->
+<section id="skills">
+  <div class="container">
+    <div class="section-header center">
+      <div class="section-tag">Expertise</div>
+      <h2 class="section-title">Skills &amp; <span>Technologies</span></h2>
+      <p class="section-subtitle">A full-spectrum skill set spanning IT systems, spatial data, programming, creative tools and data analysis.</p>
+    </div>
+
+    <div class="skills-grid">
+      <div class="skill-category reveal delay-1">
+        <span class="skill-cat-icon"><svg class="icon" aria-hidden="true"><use href="#i-map"/></svg></span>
+        <div class="skill-cat-title">GIS &amp; Mapping</div>
+        <div class="skill-tags">
+          <span class="tag">ArcMap</span><span class="tag">AutoCAD</span>
+          <span class="tag">Spatial Data</span><span class="tag">Land Demarcation</span>
+          <span class="tag">GPS Coordinates</span><span class="tag">Map Layout Design</span>
+          <span class="tag">Polygon Calculation</span>
+        </div>
+      </div>
+
+      <div class="skill-category reveal delay-2">
+        <span class="skill-cat-icon"><svg class="icon" aria-hidden="true"><use href="#i-monitor"/></svg></span>
+        <div class="skill-cat-title">IT &amp; Systems</div>
+        <div class="skill-tags">
+          <span class="tag">IT Infrastructure</span><span class="tag">Database Admin</span>
+          <span class="tag">Systems Admin</span><span class="tag">User Access</span>
+          <span class="tag">Data Integrity</span><span class="tag">IT Project Mgmt</span>
+          <span class="tag">Cybersecurity</span><span class="tag">Technical Support</span>
+        </div>
+      </div>
+
+      <div class="skill-category reveal delay-3">
+        <span class="skill-cat-icon"><svg class="icon" aria-hidden="true"><use href="#i-code"/></svg></span>
+        <div class="skill-cat-title">Programming &amp; Web</div>
+        <div class="skill-tags">
+          <span class="tag">Python</span><span class="tag">HTML5</span>
+          <span class="tag">CSS3</span><span class="tag">JavaScript</span>
+          <span class="tag">PHP</span><span class="tag">MySQL</span>
+          <span class="tag">Flask</span><span class="tag">WordPress</span>
+        </div>
+      </div>
+
+      <div class="skill-category reveal delay-1">
+        <span class="skill-cat-icon"><svg class="icon" aria-hidden="true"><use href="#i-chart"/></svg></span>
+        <div class="skill-cat-title">Data &amp; Analytics</div>
+        <div class="skill-tags">
+          <span class="tag">Advanced Excel</span><span class="tag">Python Analytics</span>
+          <span class="tag">Business Intelligence</span><span class="tag">KPI Reporting</span>
+          <span class="tag">Data Cleaning</span><span class="tag">Forecasting</span>
+          <span class="tag">M&amp;E Frameworks</span>
+        </div>
+      </div>
+
+      <div class="skill-category reveal delay-2">
+        <span class="skill-cat-icon"><svg class="icon" aria-hidden="true"><use href="#i-palette"/></svg></span>
+        <div class="skill-cat-title">Creative &amp; Design</div>
+        <div class="skill-tags">
+          <span class="tag">Adobe Photoshop</span><span class="tag">Adobe Illustrator</span>
+          <span class="tag">Premiere Pro</span><span class="tag">Video Editing</span>
+          <span class="tag">Logo Design</span><span class="tag">Branding</span>
+          <span class="tag">Motion Graphics</span>
+        </div>
+      </div>
+
+      <div class="skill-category reveal delay-3">
+        <span class="skill-cat-icon"><svg class="icon" aria-hidden="true"><use href="#i-languages"/></svg></span>
+        <div class="skill-cat-title">Languages &amp; Soft Skills</div>
+        <div class="skill-tags">
+          <span class="tag">English</span><span class="tag">Chichewa</span>
+          <span class="tag">Tumbuka</span><span class="tag">Team Leadership</span>
+          <span class="tag">Training &amp; Facilitation</span>
+          <span class="tag">Problem Solving</span><span class="tag">Communication</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════
+     PROJECTS
+════════════════════════════════════════ -->
+<section id="projects">
+  <div class="container">
+    <div class="section-header center stagger reveal">
+      <div class="section-tag">Portfolio</div>
+      <h2 class="section-title">GitHub <span>Projects</span></h2>
+      <p class="section-subtitle">Real-world solutions built with purpose. Explore my open-source work and digital tools.</p>
+    </div>
+
+    <!-- Featured project spotlight (carousel) -->
+    <div class="spotlight reveal" id="spotlight" aria-label="Featured projects" hidden>
+      <div class="spotlight-viewport">
+        <div class="spotlight-track" id="spotlight-track"></div>
+      </div>
+      <button class="spotlight-arrow prev" id="spotlight-prev" aria-label="Previous featured project">
+        <svg class="icon" aria-hidden="true"><use href="#i-chevron"/></svg>
+      </button>
+      <button class="spotlight-arrow next" id="spotlight-next" aria-label="Next featured project">
+        <svg class="icon" aria-hidden="true"><use href="#i-chevron"/></svg>
+      </button>
+      <div class="spotlight-dots" id="spotlight-dots" role="tablist" aria-label="Featured project slides"></div>
+    </div>
+
+    <div id="github-loader" class="github-loader">
+      <div class="spinner"></div>
+      Loading repositories from GitHub...
+    </div>
+    <div id="projects-grid" class="projects-grid"></div>
+
+    <div style="text-align:center;margin-top:2.5rem" class="reveal">
+      <a href="https://github.com/KingKatal" target="_blank" rel="noopener" class="btn btn-outline">
+        View All on GitHub <svg class="icon" aria-hidden="true"><use href="#i-external"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════
+     SERVICES
+════════════════════════════════════════ -->
+<section id="services">
+  <div class="container">
+    <div class="section-header center">
+      <div class="section-tag">What I Offer</div>
+      <h2 class="section-title">Services &amp; <span>Solutions</span></h2>
+      <p class="section-subtitle">Professional services delivered with technical excellence and creative precision.</p>
+    </div>
+
+    <div class="services-grid">
+      <div class="service-card reveal delay-1">
+        <div class="service-icon"><svg class="icon" aria-hidden="true"><use href="#i-map"/></svg></div>
+        <h3>GIS &amp; Spatial Mapping</h3>
+        <p>Land demarcation maps, spatial data analysis, boundary mapping and geographic information systems using ArcMap and AutoCAD.</p>
+        <span class="service-price">Available for Projects</span>
+      </div>
+      <div class="service-card reveal delay-2">
+        <div class="service-icon"><svg class="icon" aria-hidden="true"><use href="#i-monitor"/></svg></div>
+        <h3>IT Systems &amp; Support</h3>
+        <p>Full IT infrastructure setup, database administration, user access management, system troubleshooting and technical support.</p>
+        <span class="service-price">Available for Hire</span>
+      </div>
+      <div class="service-card reveal delay-3">
+        <div class="service-icon"><svg class="icon" aria-hidden="true"><use href="#i-globe"/></svg></div>
+        <h3>Web Development</h3>
+        <p>Custom websites, web applications, WordPress sites and full-stack solutions built with HTML, CSS, JavaScript and PHP.</p>
+        <span class="service-price">From MWK 150,000</span>
+      </div>
+      <div class="service-card reveal delay-1">
+        <div class="service-icon"><svg class="icon" aria-hidden="true"><use href="#i-chart"/></svg></div>
+        <h3>Data Analysis &amp; Reporting</h3>
+        <p>Data cleaning, aggregation, KPI dashboards, business intelligence reports and monitoring and evaluation frameworks.</p>
+        <span class="service-price">Available for Projects</span>
+      </div>
+      <div class="service-card reveal delay-2">
+        <div class="service-icon"><svg class="icon" aria-hidden="true"><use href="#i-palette"/></svg></div>
+        <h3>Graphic Design &amp; Branding</h3>
+        <p>Logo design, brand identity systems, marketing materials, promotional graphics and video editing using the Adobe Creative Suite.</p>
+        <span class="service-price">From MWK 25,000</span>
+      </div>
+      <div class="service-card reveal delay-3">
+        <div class="service-icon"><svg class="icon" aria-hidden="true"><use href="#i-cap"/></svg></div>
+        <h3>IT Training &amp; Education</h3>
+        <p>Computer skills training, software workshops, GIS training and digital literacy programs for individuals and organisations.</p>
+        <span class="service-price">Available for Booking</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════
+     EXPERIENCE & EDUCATION (populated from CV)
+════════════════════════════════════════ -->
+<section id="experience">
+  <div class="container">
+    <div class="section-header center stagger reveal">
+      <div class="section-tag">Track Record</div>
+      <h2 class="section-title">Experience &amp; <span>Education</span></h2>
+      <p class="section-subtitle">Five years of hands-on delivery across IT operations, spatial data, analytics and creative production.</p>
+    </div>
+
+    <div class="timeline reveal">
+      <article class="timeline-item">
+        <div class="timeline-marker"><svg class="icon" aria-hidden="true"><use href="#i-monitor"/></svg></div>
+        <div class="timeline-content">
+          <div class="timeline-meta">
+            <span class="timeline-period">Current</span>
+            <span class="timeline-place">Blantyre, Malawi</span>
+          </div>
+          <h3>IT Officer</h3>
+          <p>Managing IT infrastructure, database administration, user access control and day-to-day technical support — keeping systems secure, available and dependable for staff and stakeholders.</p>
+          <div class="timeline-tags">
+            <span class="tag">IT Infrastructure</span><span class="tag">Database Admin</span>
+            <span class="tag">Cybersecurity</span><span class="tag">Technical Support</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="timeline-item">
+        <div class="timeline-marker"><svg class="icon" aria-hidden="true"><use href="#i-zap"/></svg></div>
+        <div class="timeline-content">
+          <div class="timeline-meta">
+            <span class="timeline-period">Founder</span>
+            <span class="timeline-place">KataTech Solutions</span>
+          </div>
+          <h3>Founder &amp; Lead Technologist</h3>
+          <p>Building a technology company delivering smart digital solutions for Malawian businesses, institutions and agricultural communities — from GIS mapping to web platforms and data systems.</p>
+          <div class="timeline-tags">
+            <span class="tag">Product Strategy</span><span class="tag">Web Development</span>
+            <span class="tag">GIS Solutions</span><span class="tag">Client Delivery</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="timeline-item">
+        <div class="timeline-marker"><svg class="icon" aria-hidden="true"><use href="#i-map"/></svg></div>
+        <div class="timeline-content">
+          <div class="timeline-meta">
+            <span class="timeline-period">5+ Years</span>
+            <span class="timeline-place">GIS &amp; Land Survey</span>
+          </div>
+          <h3>GIS Specialist</h3>
+          <p>Producing land demarcation maps, spatial datasets and boundary analyses with ArcMap and AutoCAD — including GPS ground-truthing, polygon calculation and map layout design.</p>
+          <div class="timeline-tags">
+            <span class="tag">ArcMap</span><span class="tag">AutoCAD</span>
+            <span class="tag">Spatial Analysis</span><span class="tag">Map Design</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="timeline-item">
+        <div class="timeline-marker"><svg class="icon" aria-hidden="true"><use href="#i-cap"/></svg></div>
+        <div class="timeline-content">
+          <div class="timeline-meta">
+            <span class="timeline-period">In Progress</span>
+            <span class="timeline-place">MUBAS</span>
+          </div>
+          <h3>BSc Management Information Systems</h3>
+          <p>Malawi University of Business and Applied Sciences — combining information systems theory with applied data, analytics and enterprise technology practice.</p>
+          <div class="timeline-tags">
+            <span class="tag">Information Systems</span><span class="tag">Data Analysis</span>
+            <span class="tag">Business Intelligence</span>
+          </div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════
+     WORK GALLERY
+════════════════════════════════════════ -->
+<section id="gallery">
+  <div class="container">
+    <div class="section-header center stagger reveal">
+      <div class="section-tag">Selected Work</div>
+      <h2 class="section-title">Work <span>Gallery</span></h2>
+      <p class="section-subtitle">A visual sample of GIS mapping, data dashboards, brand design and digital production delivered through KataTech Solutions.</p>
+    </div>
+
+    <div class="gallery-grid reveal" id="gallery-grid">
+      <article class="gallery-item wide" data-title="Land Demarcation Mapping" data-category="GIS &amp; Spatial" data-icon="i-map" tabindex="0" role="button" aria-label="View Land Demarcation Mapping">
+        <div class="gallery-icon"><svg class="icon" aria-hidden="true"><use href="#i-map"/></svg></div>
+        <div class="gallery-zoom"><svg class="icon" aria-hidden="true"><use href="#i-zoom"/></svg></div>
+        <div class="gallery-caption"><strong>Land Demarcation Mapping</strong><span>ArcMap · AutoCAD · GPS Ground-truthing</span></div>
+      </article>
+      <article class="gallery-item tall" data-title="Business Intelligence Dashboard" data-category="Data &amp; Analytics" data-icon="i-chart" tabindex="0" role="button" aria-label="View Business Intelligence Dashboard">
+        <div class="gallery-icon"><svg class="icon" aria-hidden="true"><use href="#i-chart"/></svg></div>
+        <div class="gallery-zoom"><svg class="icon" aria-hidden="true"><use href="#i-zoom"/></svg></div>
+        <div class="gallery-caption"><strong>BI Dashboard</strong><span>Python · KPI Reporting</span></div>
+      </article>
+      <article class="gallery-item" data-title="Brand Identity System" data-category="Graphic Design" data-icon="i-palette" tabindex="0" role="button" aria-label="View Brand Identity System">
+        <div class="gallery-icon"><svg class="icon" aria-hidden="true"><use href="#i-palette"/></svg></div>
+        <div class="gallery-zoom"><svg class="icon" aria-hidden="true"><use href="#i-zoom"/></svg></div>
+        <div class="gallery-caption"><strong>Brand Identity</strong><span>Logo · Visual System</span></div>
+      </article>
+      <article class="gallery-item" data-title="Web Platform Build" data-category="Web Development" data-icon="i-globe" tabindex="0" role="button" aria-label="View Web Platform Build">
+        <div class="gallery-icon"><svg class="icon" aria-hidden="true"><use href="#i-globe"/></svg></div>
+        <div class="gallery-zoom"><svg class="icon" aria-hidden="true"><use href="#i-zoom"/></svg></div>
+        <div class="gallery-caption"><strong>Web Platform</strong><span>HTML · CSS · JavaScript</span></div>
+      </article>
+      <article class="gallery-item" data-title="Digital Mapping Layers" data-category="GIS &amp; Spatial" data-icon="i-layers" tabindex="0" role="button" aria-label="View Digital Mapping Layers">
+        <div class="gallery-icon"><svg class="icon" aria-hidden="true"><use href="#i-layers"/></svg></div>
+        <div class="gallery-zoom"><svg class="icon" aria-hidden="true"><use href="#i-zoom"/></svg></div>
+        <div class="gallery-caption"><strong>Mapping Layers</strong><span>Spatial Analysis · Layouts</span></div>
+      </article>
+      <article class="gallery-item wide" data-title="Promotional Video &amp; Motion Graphics" data-category="Creative &amp; Video" data-icon="i-video" tabindex="0" role="button" aria-label="View Promotional Video and Motion Graphics">
+        <div class="gallery-icon"><svg class="icon" aria-hidden="true"><use href="#i-video"/></svg></div>
+        <div class="gallery-zoom"><svg class="icon" aria-hidden="true"><use href="#i-zoom"/></svg></div>
+        <div class="gallery-caption"><strong>Video &amp; Motion Graphics</strong><span>Premiere Pro · After Effects</span></div>
+      </article>
+      <article class="gallery-item" data-title="KataFarm Agri Platform" data-category="AgriTech" data-icon="i-leaf" tabindex="0" role="button" aria-label="View KataFarm Agri Platform">
+        <div class="gallery-icon"><svg class="icon" aria-hidden="true"><use href="#i-leaf"/></svg></div>
+        <div class="gallery-zoom"><svg class="icon" aria-hidden="true"><use href="#i-zoom"/></svg></div>
+        <div class="gallery-caption"><strong>KataFarm</strong><span>Smart Agriculture</span></div>
+      </article>
+      <article class="gallery-item" data-title="Marketing &amp; Print Materials" data-category="Graphic Design" data-icon="i-pen" tabindex="0" role="button" aria-label="View Marketing and Print Materials">
+        <div class="gallery-icon"><svg class="icon" aria-hidden="true"><use href="#i-pen"/></svg></div>
+        <div class="gallery-zoom"><svg class="icon" aria-hidden="true"><use href="#i-zoom"/></svg></div>
+        <div class="gallery-caption"><strong>Marketing &amp; Print</strong><span>Illustrator · Photoshop</span></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- Lightbox -->
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Work sample viewer">
+  <div class="lightbox-panel">
+    <button class="lightbox-close" id="lightbox-close" aria-label="Close viewer">
+      <svg class="icon" aria-hidden="true"><use href="#i-close"/></svg>
+    </button>
+    <div class="lightbox-media"><svg class="icon" aria-hidden="true"><use href="#i-map" id="lightbox-icon"/></svg></div>
+    <div class="lightbox-info">
+      <h3 id="lightbox-title">Title</h3>
+      <p id="lightbox-desc">Description</p>
+    </div>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════════
+     CONTACT
+════════════════════════════════════════ -->
+<section id="contact">
+  <div class="container">
+    <div class="contact-inner">
+      <div class="contact-info reveal-left">
+        <div class="section-tag">Get In Touch</div>
+        <h2 class="section-title">Let's <span>Work Together</span></h2>
+        <p>Whether you need IT support, GIS mapping, web development, data analysis or creative design — I'm available for freelance projects, contracts and full-time opportunities.</p>
+        <div class="contact-details">
+          <div class="contact-item">
+            <div class="contact-item-icon"><svg class="icon" aria-hidden="true"><use href="#i-pin"/></svg></div>
+            <div class="contact-item-text">
+              <span>Location</span>
+              <strong>Kabula, Blantyre, Malawi</strong>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-item-icon"><svg class="icon" aria-hidden="true"><use href="#i-phone"/></svg></div>
+            <div class="contact-item-text">
+              <span>Phone / WhatsApp</span>
+              <strong>+265 880 725 061</strong>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-item-icon"><svg class="icon" aria-hidden="true"><use href="#i-mail"/></svg></div>
+            <div class="contact-item-text">
+              <span>Email</span>
+              <strong>chirwagomez@gmail.com</strong>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-item-icon"><svg class="icon" aria-hidden="true"><use href="#i-github"/></svg></div>
+            <div class="contact-item-text">
+              <span>GitHub</span>
+              <strong>github.com/KingKatal</strong>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="reveal-right">
+        <form id="contact-form" class="contact-form">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="name">Full Name</label>
+              <input type="text" id="name" name="name" placeholder="Your full name" required />
+            </div>
+            <div class="form-group">
+              <label for="email">Email Address</label>
+              <input type="email" id="email" name="email" placeholder="your@email.com" required />
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="service">Service Needed</label>
+            <select id="service" name="service">
+              <option value="">Select a service...</option>
+              <option>GIS &amp; Spatial Mapping</option>
+              <option>IT Systems &amp; Support</option>
+              <option>Web Development</option>
+              <option>Data Analysis &amp; Reporting</option>
+              <option>Graphic Design &amp; Branding</option>
+              <option>IT Training</option>
+              <option>Employment Opportunity</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" placeholder="Tell me about your project or opportunity..." required></textarea>
+          </div>
+          <button type="submit" class="btn-submit">Send Message <svg class="icon" aria-hidden="true"><use href="#i-send"/></svg></button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════
+     FOOTER
+════════════════════════════════════════ -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="nav-brand" style="margin-bottom:0.75rem">
+          <div class="nav-logo">GK</div>
+          <div class="nav-brand-text">
+            <span>Gomezgani Chirwa</span>
+            <span>KATATECH SOLUTIONS</span>
+          </div>
+        </div>
+        <p>IT Officer · GIS Specialist · Data Analyst · Creative Designer. Building smart digital solutions in Malawi and beyond.</p>
+      </div>
+      <div class="footer-links">
+        <div class="footer-col">
+          <h4>Navigation</h4>
+          <a href="#hero">Home</a>
+          <a href="#about">About</a>
+          <a href="#skills">Skills</a>
+          <a href="#projects">Projects</a>
+        </div>
+        <div class="footer-col">
+          <h4>Services</h4>
+          <a href="#services">GIS Mapping</a>
+          <a href="#services">Web Development</a>
+          <a href="#services">Data Analysis</a>
+          <a href="#services">Graphic Design</a>
+        </div>
+        <div class="footer-col">
+          <h4>Connect</h4>
+          <a href="https://github.com/KingKatal" target="_blank">GitHub</a>
+          <a href="mailto:chirwagomez@gmail.com">Email</a>
+          <a href="tel:+265880725061">WhatsApp</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Gomezgani Chirwa · <span>KataTech Solutions</span></span>
+      <span>Designed &amp; Built in Malawi <svg class="icon icon-fill" aria-hidden="true"><use href="#i-heart"/></svg></span>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+<script src="js/github.js"></script>
+</body>
+</html>
