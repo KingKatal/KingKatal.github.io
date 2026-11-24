@@ -462,6 +462,7 @@ section { padding: 110px 0; scroll-margin-top: 84px; }
 }
 .btn-submit:hover span { transform: translateX(4px); }
 .btn-submit.success { background: var(--success); }
+.btn-submit:disabled { opacity: 0.75; cursor: wait; transform: none; box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.22), 0 6px 22px rgba(47, 75, 216, 0.25); }
 
 /* ── FOOTER ── */
 footer {

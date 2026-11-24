@@ -223,18 +223,47 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
 });
 
 // ── CONTACT FORM ──
+// Posts to FormSubmit.co, which emails the message to chirwagomez@gmail.com.
+// The "Message Sent!" state only appears after a confirmed delivery.
 const form = document.getElementById('contact-form');
 if (form) {
-  form.addEventListener('submit', e => {
+  const btn = form.querySelector('.btn-submit');
+  const restHTML = btn.innerHTML;   // "Send Message" + icon, restored after each attempt
+  let sending = false;
+
+  form.addEventListener('submit', async e => {
     e.preventDefault();
-    const btn = form.querySelector('.btn-submit');
-    btn.innerHTML = `${icon('i-check')} Message Sent!`;
-    btn.classList.add('success');
-    setTimeout(() => {
-      btn.innerHTML = `Send Message ${icon('i-send')}`;
-      btn.classList.remove('success');
+    if (sending) return;
+    if (!form.checkValidity()) { form.reportValidity(); return; }
+
+    sending = true;
+    btn.disabled = true;
+    btn.innerHTML = `${icon('i-send')} Sending...`;
+
+    try {
+      const res = await fetch('https://formsubmit.co/ajax/chirwagomez@gmail.com', {
+        method: 'POST',
+        body: new FormData(form),
+        headers: { Accept: 'application/json' }
+      });
+      const data = await res.json().catch(() => ({}));
+
+      if (!res.ok || data.success === 'false') throw new Error(data.message || 'delivery failed');
+
+      btn.innerHTML = `${icon('i-check')} Message Sent!`;
+      btn.classList.add('success');
       form.reset();
-    }, 3000);
+      setTimeout(() => {
+        btn.innerHTML = restHTML;
+        btn.classList.remove('success');
+      }, 3000);
+    } catch {
+      btn.innerHTML = `${icon('i-send')} Not sent — try again`;
+      setTimeout(() => { btn.innerHTML = restHTML; }, 3000);
+    } finally {
+      sending = false;
+      btn.disabled = false;
+    }
   });
 }
 

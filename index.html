@@ -632,7 +632,14 @@
       </div>
 
       <div class="reveal-right">
-        <form id="contact-form" class="contact-form">
+        <!-- FormSubmit.co delivers these messages straight to chirwagomez@gmail.com.
+             First submission sends an activation email — click the link once to go live. -->
+        <form id="contact-form" class="contact-form"
+              action="https://formsubmit.co/chirwagomez@gmail.com" method="POST">
+          <input type="hidden" name="_subject" value="New message from your portfolio website">
+          <input type="hidden" name="_template" value="table">
+          <input type="hidden" name="_captcha" value="false">
+          <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true">
           <div class="form-row">
             <div class="form-group">
               <label for="name">Full Name</label>
